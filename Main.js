@@ -151,14 +151,16 @@ async function loadGallery() {
             }
             else if (href.includes("mp4")) {
                 img.src = `https://res.cloudinary.com/vishwa-website/image/upload/v1755961951/gallery/images/Passing-Out/Passing-out-vid-1-thumb.png`;
-            }
+            } 
+              /*
             else if (href.includes("/upload/") && isVideo) {
                 // Cloudinary video thumbnail (first frame)
                 const parts = href.split("/upload/");
                 // remove extension from the video filename
                 const fileWithoutExt = parts[1].replace(/\.(mp4|mov)$/i, "");
                 img.src = `${parts[0]}/upload/w_300,c_scale,so_0,f_auto,q_auto/${fileWithoutExt}.jpg`;
-            }
+            } 
+            */
             else {
                 // fallback for non-Cloudinary URL
                 img.src = href;
@@ -241,4 +243,5 @@ window.addEventListener("load",()=>{
   loadGallery();
   animateSection(currentSection);
   gsap.set(".gallery-grid img",{opacity:1,y:0});
+
 });
