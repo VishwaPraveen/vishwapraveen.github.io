@@ -1,0 +1,116 @@
+.logo-container {
+      position: relative;       /* important for pseudo-elements */
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    /* Base holographic / chrome gradient */
+    .logo-base {
+      background: linear-gradient(45deg, #00ccff, #ff00ff, #00ff99, #00ccff);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: holo 1.5s linear infinite alternate;
+      text-shadow: 0 0 5px rgba(255,255,255,0.2), 0 0 10px rgba(255,255,255,0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes holo {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 0%; }
+    }
+
+    /* Glitch layers */
+    .logo-glitch::before,
+    .logo-glitch::after {
+      content: 'VISHWA';
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0.8;
+      z-index: 2;
+    }
+
+    .logo-glitch::before {
+      animation: glitchTop 1s infinite linear alternate-reverse;
+      clip: rect(0, 9999px, 12px, 0);
+      color: #ff00ff;
+    }
+    .logo-glitch::after {
+      animation: glitchBottom 0.5s infinite linear alternate-reverse;
+      clip: rect(18px, 9999px, 28px, 0);
+      color: #00ff00;
+    }
+
+    @keyframes glitchTop {
+      0% { transform: translate(0,0); }
+      20% { transform: translate(-2px,-2px); }
+      40% { transform: translate(2px,-2px); }
+      60% { transform: translate(-2px,2px); }
+      80% { transform: translate(2px,2px); }
+      100% { transform: translate(0,0); }
+    }
+    @keyframes glitchBottom {
+      0% { transform: translate(0,0); }
+      20% { transform: translate(2px,2px); }
+      40% { transform: translate(-2px,2px); }
+      60% { transform: translate(2px,-2px); }
+      80% { transform: translate(-2px,-2px); }
+      100% { transform: translate(0,0); }
+    }
+
+    /* Cracked / distressed overlay */
+    .logo-cracked::after {
+      content: 'VISHWA';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: rgba(255,255,255,0.05);
+      clip-path: polygon(
+        0 0, 100% 0, 100% 45%, 0 50%
+      );
+      z-index: 3;
+    }
+
+    .logo-cracked::before {
+      content: 'VISHWA';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: rgba(255,255,255,0.03);
+      clip-path: polygon(
+        0 55%, 100% 50%, 100% 100%, 0 100%
+      );
+      z-index: 3;
+    }
+
+    /* VHS scanline overlay */
+    .logo-vhs::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.05),
+        rgba(255,255,255,0.05) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    /* Hover shake for VHS glitch effect */
+    .logo-container:hover {
+      animation: shake 0.15s infinite;
+    }
+    @keyframes shake {
+      0% { transform: translate(0,0); }
+      25% { transform: translate(3px,-3px); }
+      50% { transform: translate(-3px,3px); }
+      75% { transform: translate(3px,3px); }
+      100% { transform: translate(0,0); }
+    }
