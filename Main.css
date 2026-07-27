@@ -400,6 +400,120 @@ body.dark-mode .project-button {
 }
 
 
+/* Tablets */
+@media (max-width: 900px) {
+
+    .projects-container {
+        padding: 25px;
+    }
+
+    .project-card {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .project-images {
+        width: 220px;
+    }
+
+    .project-info h2 {
+        font-size: 26px;
+    }
+
+    .project-info h3 {
+        font-size: 18px;
+    }
+
+    .project-info p,
+    .project-info li {
+        font-size: 15px;
+    }
+}
+
+
+/* Phones */
+@media (max-width: 600px) {
+
+    .projects-container {
+        padding: 10px;
+    }
+
+    .project-card {
+        gap: 12px;
+        padding: 12px;
+        border-radius: 15px;
+    }
+
+    .project-images {
+        width: 110px;
+        gap: 8px;
+    }
+
+    .project-images img {
+        border-radius: 8px;
+    }
+
+    .project-info h2 {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .project-info h3 {
+        font-size: 15px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    .project-info p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .project-info li {
+        font-size: 13px;
+        line-height: 1.4;
+        padding-left: 18px;
+        margin-bottom: 6px;
+    }
+
+    .project-info li::before {
+        left: 0;
+        font-size: 14px;
+    }
+
+    .project-button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}
+
+
+/* Very small phones */
+@media (max-width: 400px) {
+
+    .project-images {
+        width: 80px;
+    }
+
+    .project-info h2 {
+        font-size: 18px;
+    }
+
+    .project-info h3 {
+        font-size: 13px;
+    }
+
+    .project-info p,
+    .project-info li {
+        font-size: 11px;
+    }
+
+    .project-button {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+}
 
 
 .tagline {
