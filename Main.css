@@ -260,6 +260,171 @@ body.dark-mode .gallery-grid img:hover {
     box-shadow: 0 12px 40px rgba(0, 200, 255, 0.7);
 }
 
+
+
+.projects-container {
+    max-width: 1000px;
+    margin:auto;
+    padding:40px;
+  }
+  
+  
+.project-card {
+    display:flex;
+    gap:30px;
+    margin:40px 0;
+    padding:25px;
+
+    background:rgba(255,255,255,0.5);
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+
+    transition:0.3s;
+}
+
+body.dark-mode .project-card {
+    background:rgba(255,255,255,0.08);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+
+.project-card:hover {
+    transform:translateY(-10px);
+}
+
+
+
+.project-images {
+    width: 320px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-images img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    border-radius: 15px;
+}
+
+  
+  .project-info {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .project-info h2 {
+    font-size: 32px;
+    margin: 0 0 10px;
+  }
+  
+.project-info h3 {
+    margin-top:28px;
+    margin-bottom:12px;
+    font-size:20px;
+    color:#0077cc;
+    letter-spacing:0.5px;
+}
+
+
+body.dark-mode .project-info h3 {
+    color:#00c8ff;
+}
+
+.project-info p {
+    line-height:1.7;
+    font-size:16px;
+    margin-bottom:15px;
+    color:#333;
+}
+
+
+body.dark-mode .project-info p {
+    color:#ddd;
+}
+
+
+.project-info ul {
+    list-style:none;
+    padding:0;
+    margin:10px 0 20px;
+}
+
+
+.project-info li {
+    position:relative;
+    padding-left:28px;
+    margin-bottom:10px;
+    line-height:1.5;
+    color:#222;
+}
+
+
+body.dark-mode .project-info li {
+    color:#eee;
+}
+
+
+.project-info li::before {
+    content:"▹";
+    position:absolute;
+    left:5px;
+    color:#0077cc;
+    font-size:18px;
+}
+
+
+body.dark-mode .project-info li::before {
+    color:#00c8ff;
+}
+
+
+.project-button {
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:20px;
+    background:#0077cc;
+    color:white;
+    text-decoration:none;
+}
+
+
+body.dark-mode .project-button {
+    background:#00c8ff;
+    color:#111;
+}
+
+
+
+
+.tagline {
+    position: relative;
+    height: 1.5em;
+  }
+  .tagline span {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation: fadeSwap 6s infinite;
+  }
+  .tagline span:nth-child(2) {
+    animation-delay: 3s;
+  }
+  @keyframes fadeSwap {
+    0%, 45% { opacity: 1; }
+    50%, 95% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+
+
+
 /* Responsive tweaks */
 @media(max-width:768px) {
     .gallery-grid {
