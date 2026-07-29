@@ -186,3 +186,24 @@ window.addEventListener("load",()=>{
   animateSection(currentSection);
   gsap.set(".gallery-grid img",{opacity:1,y:0});
 });
+
+//image opening
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('imgModalOverlay');
+  const modalImg = document.getElementById('imgModalImg');
+
+  document.querySelectorAll('.project-images img').forEach(img => {
+    img.addEventListener('click', () => {
+      modalImg.src = img.src;
+      overlay.classList.add('active');
+    });
+  });
+
+  overlay.addEventListener('click', () => {
+    overlay.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') overlay.classList.remove('active');
+  });
+});
